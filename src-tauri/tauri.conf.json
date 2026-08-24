@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Serein",
+  "mainBinaryName": "Serein",
+  "version": "0.1.0",
+  "identifier": "io.serein.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Serein",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 980,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' customprotocol: asset:; connect-src ipc: http://ipc.localhost; img-src 'self' asset: http://asset.localhost data: blob:; style-src 'self' 'unsafe-inline'",
+      "assetProtocol": {
+        "enable": true,
+        "scope": {
+          "allow": [
+            "$TEMP/serein-synthetic-vaults/**",
+            "$TEMP/hushnote-synthetic-vaults/**",
+            "$TEMP/writ-io-synthetic-vaults/**"
+          ],
+          "deny": [
+            "$TEMP/serein-synthetic-vaults/**/.serein/**",
+            "$TEMP/hushnote-synthetic-vaults/**/.hushnote/**",
+            "$TEMP/hushnote-synthetic-vaults/**/.serein/**",
+            "$TEMP/writ-io-synthetic-vaults/**/.writ/**",
+            "$TEMP/writ-io-synthetic-vaults/**/.hushnote/**",
+            "$TEMP/writ-io-synthetic-vaults/**/.serein/**"
+          ]
+        }
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.ico"],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "allowDowngrades": false,
+      "nsis": {
+        "installMode": "currentUser",
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico"
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+# Frontend dependencies, builds, and caches
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.vitest/
+*.tsbuildinfo
+
+# Rust / Tauri builds and generated files
+target/
+src-tauri/target/
+src-tauri/gen/
+artifacts/
+*.exe
+*.msi
+*.msix
+*.appx
+*.dmg
+*.AppImage
+
+# Local environment files (an intentionally committed example remains allowed)
+.env
+.env.*
+!.env.example
+
+# Editors, operating systems, and local tools
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+/.codebase-memory/
+/.impeccable/
+/legacy-prototype/
+/docs/settings-reference-research.md
+/docs/settings-concepts.md
+/docs/release/phase1-packaging-report.md
+
+# Logs, diagnostics, and temporary test output
+*.log
+logs/
+tmp/
+temp/
+test-results/
+playwright-report/
+.nyc_output/
+*.tmp
+
+# Serein and pre-release application data
+.serein/
+.hushnote/
+.writ/
+.serein-dev/
+.hushnote-dev/
+.writ-dev/
+.serein-synthetic-vault
+.hushnote-synthetic-vault
+.writ-synthetic-vault
+
+# Local and generated vault fixtures
+/vault/
+/vaults/
+/local-vaults/
+/synthetic-vaults/
+/test-vaults/
+/qa-vaults/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/

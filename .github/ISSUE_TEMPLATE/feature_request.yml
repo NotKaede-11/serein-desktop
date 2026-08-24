@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest an improvement that fits Serein's local-first direction.
+title: "[Idea]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the note-taking workflow, not only the proposed control.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like Serein to do?
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: How should this work with plain local files?
+      description: Include portability, offline use, or Markdown behavior when relevant.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

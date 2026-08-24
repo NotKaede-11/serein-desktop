@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a reproducible problem in Serein.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Serein. Please remove private note content, vault paths, filenames, and credentials from screenshots or logs before attaching them.
+  - type: input
+    id: version
+    attributes:
+      label: Serein version
+      placeholder: 0.1.0 Preview
+    validations:
+      required: true
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - Windows Setup
+        - Portable
+        - Development build
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version and display scaling
+      placeholder: Windows 11 24H2, 125%
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use a synthetic vault or a disposable copy where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Sanitized diagnostics
+      description: Optional. Never include note contents, personal paths, filenames, calendar data, or tokens.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed personal note content, paths, filenames, and credentials from this report.
+          required: true

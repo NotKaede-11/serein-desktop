@@ -1,0 +1,56 @@
+{
+  "name": "serein",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A quiet, local-first Markdown workspace for Windows.",
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "notes",
+    "local-first",
+    "tauri",
+    "rust",
+    "productivity",
+    "knowledge-management"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:native": "pwsh -NoProfile -File scripts/with-msvc.ps1 cargo test --manifest-path src-tauri/Cargo.toml",
+    "test:watch": "vitest",
+    "build:native": "pwsh -NoProfile -File scripts/with-msvc.ps1 cargo build --manifest-path src-tauri/Cargo.toml",
+    "build:release": "pwsh -NoProfile -File scripts/with-msvc.ps1 npx tauri build --bundles nsis",
+    "build:portable": "pwsh -NoProfile -File scripts/package-portable.ps1",
+    "package:preview": "pwsh -NoProfile -File scripts/package-preview.ps1",
+    "verify:release": "pwsh -NoProfile -File scripts/verify-release.ps1",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.11.0",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/search": "^6.7.1",
+    "@codemirror/state": "^6.7.1",
+    "@codemirror/view": "^6.43.9",
+    "@tauri-apps/api": "^2.11.1",
+    "lucide-react": "^1.33.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.6",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "jsdom": "^30.0.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  }
+}
